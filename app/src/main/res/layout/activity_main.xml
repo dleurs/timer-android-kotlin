@@ -11,7 +11,7 @@
         android:id="@+id/tvTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="-"
         android:textSize="100sp"
         app:layout_constraintBottom_toTopOf="@+id/tvTimerInputLabel"
         app:layout_constraintEnd_toEndOf="parent"

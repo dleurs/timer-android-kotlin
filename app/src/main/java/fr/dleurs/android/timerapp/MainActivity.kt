@@ -3,6 +3,7 @@ package fr.dleurs.android.timerapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         bLaunchTimer.setOnClickListener {
             var safeLengthTime: Long
-            if (etTimerInput.text.isNullOrEmpty()) {
+            if (etTimerInput.text.isNullOrEmpty() or !etTimerInput.text.isDigitsOnly()) {
                 etTimerInput.setText("10")
                 safeLengthTime = 10
             } else {
@@ -29,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         bStopTimer.setOnClickListener {
-
+            timerViewModel.stopTimer()
+            tvTimer.text = "-"
         }
 
         timerViewModel.finished.observe(this, Observer {
