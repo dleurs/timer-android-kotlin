@@ -13,6 +13,8 @@ class TimerViewModel() : ViewModel() {
         return _currentTime
     }
 
+    var finished = MutableLiveData<Boolean>()
+
     fun startTimer(lenghtTimerSeconds: Long = 10) {
         println((lenghtTimerSeconds * 1000).toString())
         timer = object : CountDownTimer(lenghtTimerSeconds * 1000, 1000){
@@ -22,6 +24,7 @@ class TimerViewModel() : ViewModel() {
 
             override fun onFinish() {
                 println("Timer finished")
+                finished.value = true
             }
 
         }.start()

@@ -2,6 +2,7 @@ package fr.dleurs.android.timerapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,5 +27,12 @@ class MainActivity : AppCompatActivity() {
                 tvTimer.text = it.toString()
             })
         }
+
+        timerViewModel.finished.observe(this, Observer {
+            if (it) {
+                Toast.makeText(this, "Finished", Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 }
