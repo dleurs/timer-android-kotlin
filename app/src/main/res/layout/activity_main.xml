@@ -50,10 +50,22 @@
         android:text="Start"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bStopTimer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTimerInput" />
+
+    <Button
+        android:id="@+id/bStopTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bLaunchTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bLaunchTimer"
+        app:layout_constraintTop_toTopOf="@+id/bLaunchTimer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

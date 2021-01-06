@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
+        bStopTimer.setOnClickListener {
+
+        }
+
         timerViewModel.finished.observe(this, Observer {
             if (it) {
                 Toast.makeText(this, "Finished", Toast.LENGTH_LONG).show()
